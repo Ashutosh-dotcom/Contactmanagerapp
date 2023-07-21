@@ -7,7 +7,7 @@
     <data>
         <variable
             name="userViewModel"
-            type="com.example.contactmanagerapp.ViewModel.UserViewModel" />
+            type="com.example.contactmanagerapp.viewModel.UserViewModel" />
 
 
 
@@ -57,24 +57,26 @@
                 app:layout_constraintTop_toBottomOf="@+id/nameET" />
 
             <Button
+                android:onClick="@{()->userViewModel.saveOrUpdate()}"
                 android:id="@+id/btn1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="56dp"
-                android:text="Save"
+                android:text="@={userViewModel.saveOrUpdateButtonText}"
                 app:layout_constraintBottom_toTopOf="@+id/btn2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/nameET"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
+                android:onClick="@{()->userViewModel.clearAllOrDelete()}"
                 android:id="@+id/btn2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="54dp"
                 android:layout_marginBottom="2dp"
-                android:text="Delete"
+                android:text="@={userViewModel.clearAllOrDeleteButtonText}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/emailET"
